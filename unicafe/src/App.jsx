@@ -5,21 +5,26 @@ const App = () => {
   const [good, setGood] = useState(0)
   const [neutral, setNeutral] = useState(0)
   const [bad, setBad] = useState(0)
+  const [log, setLog] = useState(false)
 
   const Good = () => {
     setGood(good + 1)
     // console.log(good)
+    setLog(true)
   }
 
   const Neutral = () => {
     setNeutral(neutral + 1)
     // console.log(neutral)
+    setLog(true)
   }
 
   const Bad = () => {
     setBad(bad + 1)
     // console.log(bad)
+    setLog(true)
   }
+  
 
   return (
     <div>
@@ -28,12 +33,24 @@ const App = () => {
       <button onClick = {Neutral}> neutral </button>
       <button onClick = {Bad}> bad </button>
       <h2>statistics</h2>
-      <p>good {good}</p>
-      <p>neutral {neutral}</p>
-      <p>bad {bad}</p>
-      <p>all {good + bad + neutral}</p>
-      <p>average {(good - bad)/(good + bad + neutral)}</p>
-      <p>positive {good/(good + bad + neutral) * 100} %</p>
+      if (log = true) {
+        <p>No feedback given</p>
+      } else {
+        <Statistics good = {good} bad = {bad} neutral = {neutral}/>
+      }
+    </div>
+  )
+}
+
+const Statistics = (props) => {
+  return (
+    <div>
+      <p>good {props.good}</p>
+      <p>neutral {props.neutral}</p>
+      <p>bad {props.bad}</p>
+      <p>all {props.good + props.bad + props.neutral}</p>
+      <p>average {(props.good - props.bad)/(props.good + props.bad + props.neutral)}</p>
+      <p>positive {props.good/(props.good + props.bad + props.neutral) * 100} %</p>
     </div>
   )
 }
