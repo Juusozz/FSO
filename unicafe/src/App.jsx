@@ -10,7 +10,6 @@ const App = () => {
   const Good = () => {
     setGood(good + 1)
     // console.log(good)
-    console.log(log)
     setLog(true)
   }
 
@@ -49,7 +48,15 @@ const Button = (props) => {
 const StatisticLine = (props) => {
   return (
     <div>
-      <p>{props.text} {props.value}</p>
+      <table>
+        <tbody>
+          <tr>
+            <td style={{ textAlign: 'left' }}>{props.text}</td>
+            <td style={{ textAlign: 'right' }}>{props.value}</td>
+
+          </tr>
+        </tbody>
+      </table>
     </div>
   )
 }
@@ -65,12 +72,12 @@ const Statistics = (props) => {
 
   return (
     <div>
-      <StatisticLine text = "good" value = {props.good} />
-      <StatisticLine text = "neutral" value = {props.neutral} />
-      <StatisticLine text = "bad" value = {props.bad} />
-      <StatisticLine text = "all" value = {props.good + props.bad + props.neutral} />
-      <StatisticLine text = "average" value = {(props.good - props.bad)/(props.good + props.bad + props.neutral)} />
-      <StatisticLine text = "positive" value = {props.good/(props.good + props.bad + props.neutral) * 100}/>
+        <StatisticLine text = "good" value = {props.good} />
+        <StatisticLine text = "neutral" value = {props.neutral} />
+        <StatisticLine text = "bad" value = {props.bad} />
+        <StatisticLine text = "all" value = {props.good + props.bad + props.neutral} />
+        <StatisticLine text = "average" value = {(props.good - props.bad)/(props.good + props.bad + props.neutral)} />
+        <StatisticLine text = "positive" value = {props.good/(props.good + props.bad + props.neutral) * 100}/>
     </div>
   )
 }
