@@ -10,6 +10,7 @@ const App = () => {
   const Good = () => {
     setGood(good + 1)
     // console.log(good)
+    console.log(log)
     setLog(true)
   }
 
@@ -24,7 +25,6 @@ const App = () => {
     // console.log(bad)
     setLog(true)
   }
-  
 
   return (
     <div>
@@ -33,16 +33,20 @@ const App = () => {
       <button onClick = {Neutral}> neutral </button>
       <button onClick = {Bad}> bad </button>
       <h2>statistics</h2>
-      if (log = true) {
-        <p>No feedback given</p>
-      } else {
-        <Statistics good = {good} bad = {bad} neutral = {neutral}/>
-      }
+      <Statistics good = {good} bad = {bad} neutral = {neutral} log = {log}/>
     </div>
   )
 }
 
 const Statistics = (props) => {
+  if (props.log === false) {
+    return (
+      <div>
+        No feedback given
+      </div>
+    )
+  }
+
   return (
     <div>
       <p>good {props.good}</p>
