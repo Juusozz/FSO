@@ -1,10 +1,6 @@
 const App = () => {
 
   const Course = (props) => {
-    const {courses} = props
-    const multiple = ({courses}) => {
-        
-    }
     return (
       <div>
         {props.course.parts.map(i => 
@@ -32,10 +28,9 @@ const App = () => {
 
     const Header = ({ course }) => <h1>{course.name}</h1>
 
-    const courses = [
-      {
-        name: 'Half Stack application development',
+      const course = {
         id: 1,
+        name: 'Half Stack application development',
         parts: [
           {
             name: 'Fundamentals of React',
@@ -51,37 +46,15 @@ const App = () => {
             name: 'State of a component',
             exercises: 14,
             id: 3
-          },
-          {
-            name: 'Redux',
-            exercises: 11,
-            id: 4
-          }
-        ]
-      }, 
-      {
-        name: 'Node.js',
-        id: 2,
-        parts: [
-          {
-            name: 'Routing',
-            exercises: 3,
-            id: 1
-          },
-          {
-            name: 'Middlewares',
-            exercises: 7,
-            id: 2
           }
         ]
       }
-    ]
 
   return (
     <div>
-      <Header course = {courses} />
-      <Course course = {courses} />
-      <Sum course = {courses} />
+      <Header course = {course} />
+      <Course course = {course} />
+      <Sum course = {course} />
   </div>
   )
 }
