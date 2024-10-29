@@ -3,8 +3,9 @@ const FilteredArray = (props) => {
     return (
     props.isThereAFilter
       ? newArray.map(i => <div key={i.name}><p>{i.name} {i.number}</p> </div>)
-      : props.persons.map(i => <div key={i.name}><p>{i.name} {i.number}</p> </div>)
+      : props.persons.map(i => <div key={i.id}><p>{i.name} {i.number} {" "}<button onClick = {props.personDelete(i.id)} > delete </button></p> </div>)
     )
   }
 
 export default FilteredArray
+
