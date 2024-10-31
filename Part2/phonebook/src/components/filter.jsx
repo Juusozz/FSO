@@ -5,5 +5,4 @@ const FilterObject = (props) => {
     </div>
     )
 }
-
 export default FilterObject

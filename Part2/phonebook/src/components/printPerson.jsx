@@ -4,6 +4,5 @@ const PrintPerson = ({name, number, personDelete}) => {
       <p>{name} {number} <button onClick = {personDelete} > delete </button></p>
     </div>)
   }
-
 export default PrintPerson
 

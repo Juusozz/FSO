@@ -28,6 +28,4 @@ const changeNumber = (existingPerson, newNumber) => {
     return command.then(response => response.data)
 }
 
-
-
 export default {getAll, addPerson, removePerson, changeNumber}
