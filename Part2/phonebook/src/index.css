@@ -1,5 +1,5 @@
 .alert {
-  color: red;
+  color: turquoise;
   background: pink;
   font-size: 20px;
   border-style: solid;
@@ -7,3 +7,4 @@
   padding: 2px;
   margin-bottom: 20px;
 }
+

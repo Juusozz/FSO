@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const URL = 'http://localhost:3001/persons'
+const URL = 'http://localhost:3001/api/persons/'
 
 const getAll = (persons) => {
     const command = axios.get(URL)
@@ -14,14 +14,14 @@ const addPerson = (newPerson) => {
 
 const removePerson = (id) => {
     
-    const command = axios.delete(`http://localhost:3001/persons/${id}`)
+    const command = axios.delete(`${URL}${id}`)
     return command.then(response => response.data).catch(error => {
   console.log(error)})
 }
 
 const changeNumber = (existingPerson, newNumber) => {
-    console.log(`http://localhost:3001/persons/${existingPerson.id}`)
-    const command = axios.put(`http://localhost:3001/persons/${existingPerson.id}`, {
+    console.log(`${URL}${existingPerson.id}`)
+    const command = axios.put(`${URL}${existingPerson.id}`, {
         name: existingPerson.name,
         number: newNumber
     })

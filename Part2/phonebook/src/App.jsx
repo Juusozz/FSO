@@ -20,7 +20,7 @@ const App = () => {
     .then(persons => {
       setPersons(persons)
     })
-  })
+  }, [])
 
   const handleNameSubmit = (event) => {setNewName(event.target.value)}
 
