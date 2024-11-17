@@ -3,7 +3,6 @@ import React from 'react'
 import services from './services/services'
 import PrintOneCountry from './components/printSpecific'
 
-
 const App = () => {
   const [countries, setCountries] = useState([])
   const [filter, setFilter] = useState('')

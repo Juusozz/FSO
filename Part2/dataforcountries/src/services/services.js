@@ -5,6 +5,4 @@ const getCountries = () => {
     return command.then(response => response.data)
 }
 
-
-
 export default {getCountries}
