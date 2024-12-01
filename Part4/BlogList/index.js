@@ -1,5 +1,5 @@
-const app = require('./app') // the actual Express application
-const config = require('./utils/config')
+const app = require('./app')
+const config = require('./utils/configs')
 const logger = require('./utils/logger')
 
 app.listen(config.PORT, () => {
